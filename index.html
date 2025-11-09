@@ -1,0 +1,266 @@
+<!-- =========================
+     index.html
+     ========================= -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vistaro Collection</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="header">
+    <div class="logo">🛍️ Vistaro Collection</div>
+    <nav>
+      <a href="#" id="homeLink">Home</a>
+      <a href="seller.html" id="sellerPanel">Seller Panel 🔒2012</a>
+    </nav>
+  </header>
+
+  <!-- Banner Section -->
+  <section class="banner-container" id="bannerContainer">
+    <div class="banner-slide">Loading banners...</div>
+  </section>
+
+  <!-- Product Section -->
+  <main>
+    <h2 class="section-title">Our Collection</h2>
+    <div id="productContainer" class="product-container">
+      <p>Loading products...</p>
+    </div>
+  </main>
+
+  <!-- Order Form Modal -->
+  <div id="orderModal" class="modal">
+    <div class="modal-content">
+      <span class="close" id="closeModal">&times;</span>
+      <h3>Place Your Order (Cash on Delivery)</h3>
+      <form id="orderForm">
+        <input type="text" id="orderName" placeholder="Full Name" required>
+        <input type="tel" id="orderPhone" placeholder="Mobile Number" required>
+        <input type="text" id="orderAddress" placeholder="Address" required>
+        <input type="text" id="orderPincode" placeholder="Pincode" required>
+        <input type="hidden" id="orderProductId">
+        <button type="submit">Confirm Order</button>
+      </form>
+    </div>
+  </div>
+
+  <footer class="footer">
+    © 2025 Vistaro Collection | All rights reserved.
+  </footer>
+
+  <script type="module" src="script.js"></script>
+</body>
+</html>
+
+
+<!-- =========================
+     style.css
+     ========================= -->
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  background-color: #fafafa;
+  color: #333;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* Header */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #2c3e50;
+  color: #fff;
+  padding: 15px 20px;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.header .logo {
+  font-size: 1.4em;
+  font-weight: bold;
+}
+
+.header nav a {
+  color: #fff;
+  text-decoration: none;
+  margin: 0 10px;
+  transition: 0.3s;
+}
+
+.header nav a:hover {
+  color: #1abc9c;
+}
+
+/* Banner Slider */
+.banner-container {
+  width: 100%;
+  height: 220px;
+  overflow: hidden;
+  position: relative;
+  background: #ddd;
+}
+
+.banner-slide {
+  width: 100%;
+  height: 100%;
+  background-position: center;
+  background-size: cover;
+  animation: slideShow 15s infinite;
+}
+
+@keyframes slideShow {
+  0%, 33% {opacity: 1;}
+  34%, 66% {opacity: 0;}
+  67%, 100% {opacity: 1;}
+}
+
+/* Product Cards */
+.section-title {
+  text-align: center;
+  margin: 30px 0 10px;
+  font-size: 1.5em;
+  color: #2c3e50;
+}
+
+.product-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 20px;
+  padding: 20px;
+}
+
+.product-card {
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: 0.3s;
+}
+
+.product-card:hover {
+  transform: translateY(-5px);
+}
+
+.product-card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+}
+
+.product-card .info {
+  padding: 10px;
+}
+
+.product-card h3 {
+  font-size: 1.1em;
+  margin-bottom: 5px;
+}
+
+.product-card p {
+  margin-bottom: 8px;
+  font-size: 0.9em;
+}
+
+.product-card button {
+  background: #1abc9c;
+  color: white;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  border-radius: 0 0 10px 10px;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.product-card button:hover {
+  background: #16a085;
+}
+
+/* Modal */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background: rgba(0, 0, 0, 0.6);
+}
+
+.modal-content {
+  background: #fff;
+  margin: 10% auto;
+  padding: 20px;
+  width: 90%;
+  max-width: 400px;
+  border-radius: 8px;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.3);
+}
+
+.modal-content h3 {
+  margin-bottom: 15px;
+  color: #2c3e50;
+}
+
+.modal-content form {
+  display: flex;
+  flex-direction: column;
+}
+
+.modal-content form input {
+  margin: 8px 0;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.modal-content button {
+  margin-top: 10px;
+  background: #1abc9c;
+  color: white;
+  border: none;
+  padding: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.close {
+  float: right;
+  font-size: 22px;
+  cursor: pointer;
+  color: #333;
+}
+
+/* Footer */
+.footer {
+  margin-top: auto;
+  background: #2c3e50;
+  color: white;
+  text-align: center;
+  padding: 10px 0;
+  font-size: 0.9em;
+}
+
+/* Responsive */
+@media(max-width: 600px) {
+  .product-card img {
+    height: 150px;
+  }
+}

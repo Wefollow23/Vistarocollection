@@ -16,14 +16,14 @@ import {
 // Replace the object below with your actual config
 // (from your Firebase console)
 const firebaseConfig = {
-  apiKey: "YOUR_API_KEY",
-  authDomain: "YOUR_PROJECT.firebaseapp.com",
-  databaseURL: "YOUR_DB_URL",
-  projectId: "YOUR_PROJECT_ID",
-  storageBucket: "YOUR_PROJECT.appspot.com",
-  messagingSenderId: "YOUR_SENDER_ID",
-  appId: "YOUR_APP_ID",
-  measurementId: "YOUR_MEASUREMENT_ID"
+  apiKey: "AIzaSyCj0PffLL4gjLEcndJwD-guceGVdQCEh_w",
+  authDomain: "wefollow-789a9.firebaseapp.com",
+  databaseURL: "https://wefollow-789a9-default-rtdb.firebaseio.com",
+  projectId: "wefollow-789a9",
+  storageBucket: "wefollow-789a9.firebasestorage.app",
+  messagingSenderId: "975020938711",
+  appId: "1:975020938711:web:7ecdb5c7936d5215df2792",
+  measurementId: "G-56NMLBLNWT"
 };
 // ------------------------------------------------------
 

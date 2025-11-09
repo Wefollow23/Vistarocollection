@@ -1,0 +1,78 @@
+<!-- =========================
+     seller.html
+     ========================= -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Seller Panel | Vistaro Collection</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="header">
+    <div class="logo">🛒 Vistaro Seller Panel</div>
+    <nav><a href="index.html">← Back to Store</a></nav>
+  </header>
+
+  <main class="seller-main">
+    <!-- PIN Lock -->
+    <div id="lockScreen">
+      <h2>Seller Access 🔒</h2>
+      <input type="password" id="pinInput" placeholder="Enter PIN">
+      <button id="unlockBtn">Unlock</button>
+      <p id="pinMsg"></p>
+    </div>
+
+    <!-- Dashboard -->
+    <div id="dashboard" class="hidden">
+      <div class="tab-buttons">
+        <button data-tab="productsTab">Products</button>
+        <button data-tab="ordersTab">Orders</button>
+        <button data-tab="bannersTab">Banners</button>
+      </div>
+
+      <!-- Products -->
+      <section id="productsTab" class="tab active">
+        <h3>Add / Manage Products</h3>
+        <form id="productForm">
+          <input type="text" id="prodName" placeholder="Product Name" required>
+          <input type="number" id="prodPrice" placeholder="Price" required>
+          <input type="number" id="prodQty" placeholder="Quantity" required>
+          <input type="file" id="prodImage" accept="image/*" required>
+          <button type="submit">Add Product</button>
+        </form>
+
+        <table class="table">
+          <thead>
+            <tr><th>Image</th><th>Name</th><th>Price</th><th>Qty</th><th>Action</th></tr>
+          </thead>
+          <tbody id="productTable"></tbody>
+        </table>
+      </section>
+
+      <!-- Orders -->
+      <section id="ordersTab" class="tab">
+        <h3>Customer Orders</h3>
+        <table class="table">
+          <thead>
+            <tr><th>Name</th><th>Product</th><th>Address</th><th>Phone</th><th>Status</th><th>Action</th></tr>
+          </thead>
+          <tbody id="orderTable"></tbody>
+        </table>
+      </section>
+
+      <!-- Banners -->
+      <section id="bannersTab" class="tab">
+        <h3>Upload Homepage Banner</h3>
+        <input type="file" id="bannerInput" accept="image/*">
+        <button id="uploadBannerBtn">Upload Banner</button>
+        <div id="bannerList"></div>
+      </section>
+    </div>
+  </main>
+
+  <footer class="footer">© 2025 Vistaro Collection Seller Panel</footer>
+  <script type="module" src="script.js"></script>
+</body>
+</html>
